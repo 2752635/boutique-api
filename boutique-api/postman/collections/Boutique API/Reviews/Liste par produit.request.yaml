@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{baseUrl}}/api/reviews?productId=1&page=1&limit=10"
+method: GET
+queryParams:
+  productId: "1"
+  page: "1"
+  limit: "10"
+order: 1000

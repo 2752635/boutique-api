@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{baseUrl}}/api/addresses"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "rue": "801 promenade de l'Aviation",
+      "ville": "Ottawa",
+      "province": "Ontario",
+      "codePostal": "K1K 4R3",
+      "parDefaut": true
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 3000

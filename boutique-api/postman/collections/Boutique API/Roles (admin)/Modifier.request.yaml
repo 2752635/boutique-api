@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/api/roles/3"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "description": "Vendeur modifié"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 3000

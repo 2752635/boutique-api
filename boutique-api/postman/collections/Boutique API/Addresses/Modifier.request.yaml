@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{baseUrl}}/api/addresses/1"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "ville": "Gatineau",
+      "province": "Québec",
+      "codePostal": "J8Y 3Y7"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 5000

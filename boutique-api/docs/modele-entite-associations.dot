@@ -1,0 +1,27 @@
+graph MEA {
+  graph [layout=neato, overlap=false, splines=true, sep="+18", fontname="Helvetica", label="Boutique API - Modèle entité-associations", labelloc=t, fontsize=20];
+  node [fontname="Helvetica", fontsize=12];
+  edge [fontname="Helvetica", fontsize=11, len=1.6];
+  node [shape=box, style="filled", fillcolor="#DCE8F5"];
+  ROLE [label="ROLE\n─────────\n#id\nnom\ndescription"];
+  USER [label="UTILISATEUR\n─────────\n#id\nnom, prénom\nemail, mot de passe\nphoto"];
+  ADDRESS [label="ADRESSE\n─────────\n#id\nrue, ville, province\ncode postal, pays\npar défaut"];
+  CATEGORY [label="CATÉGORIE\n─────────\n#id\nnom, description\nimage"];
+  PRODUCT [label="PRODUIT\n─────────\n#id\nnom, description\nprix, stock\nimage"];
+  ORDER [label="COMMANDE\n─────────\n#id\nstatut\ntotal"];
+  node [shape=ellipse, style="filled", fillcolor="#FCEBD0"];
+  POSSEDER [label="POSSÉDER"];
+  HABITER [label="AVOIR (adresse)"];
+  PASSER [label="PASSER"];
+  LIVRER [label="LIVRER À"];
+  CONTENIR [label="CONTENIR"];
+  COMPRENDRE [label="COMPRENDRE\n(order_items)\n─────\nquantité\nprix unitaire"];
+  EVALUER [label="ÉVALUER (avis)\n─────\nnote\ncommentaire"];
+  ROLE -- POSSEDER [label="0,N"]; POSSEDER -- USER [label="1,1"];
+  USER -- HABITER [label="0,N"]; HABITER -- ADDRESS [label="1,1"];
+  USER -- PASSER [label="0,N"]; PASSER -- ORDER [label="1,1"];
+  ADDRESS -- LIVRER [label="0,N"]; LIVRER -- ORDER [label="0,1"];
+  CATEGORY -- CONTENIR [label="0,N"]; CONTENIR -- PRODUCT [label="0,1"];
+  ORDER -- COMPRENDRE [label="1,N"]; COMPRENDRE -- PRODUCT [label="0,N"];
+  USER -- EVALUER [label="0,N"]; EVALUER -- PRODUCT [label="0,N"];
+}

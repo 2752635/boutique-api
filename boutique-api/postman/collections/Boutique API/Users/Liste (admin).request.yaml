@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{baseUrl}}/api/users?page=1&limit=10&q=awa"
+method: GET
+queryParams:
+  page: "1"
+  limit: "10"
+  q: awa
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 1000

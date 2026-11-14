@@ -1,0 +1,19 @@
+$kind: http-request
+url: "{{baseUrl}}/api/addresses"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "rue": "",
+      "ville": "Ottawa",
+      "province": "Ontario",
+      "codePostal": "12345"
+    }
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 4000

@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{baseUrl}}/api/products?page=1&limit=10&q=clavier&categoryId=1&minPrix=10&maxPrix=200"
+method: GET
+queryParams:
+  page: "1"
+  limit: "10"
+  q: clavier
+  categoryId: "1"
+  minPrix: "10"
+  maxPrix: "200"
+order: 1000

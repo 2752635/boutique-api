@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{baseUrl}}/api/roles/3"
+method: DELETE
+auth:
+  type: bearer
+  credentials:
+    token: "{{token}}"
+order: 4000
